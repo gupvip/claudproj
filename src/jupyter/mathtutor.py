@@ -7,8 +7,8 @@ import os
 
 
 client = Anthropic()
-# model = "claude-sonnet-5"
-model = "claude-haiku-4-5-20251001"
+model = "claude-haiku-5-5"
+# model = "claude-haiku-4-5-20251001"
 
 def add_user_message(messages, text):
     user_message = {"role":"user","content":text}
@@ -23,6 +23,7 @@ def chat_with_claude(messages, system=None, temperature=1.0):
       "model":model,
       "max_tokens":1200,
       "messages":messages,
+      "temperature":temperature
     }
 
     if system:
